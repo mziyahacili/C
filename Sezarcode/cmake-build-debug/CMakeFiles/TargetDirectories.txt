@@ -1,0 +1,3 @@
+C:/Work/C++/Sezarcode/cmake-build-debug/CMakeFiles/Sezarcode.dir
+C:/Work/C++/Sezarcode/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Work/C++/Sezarcode/cmake-build-debug/CMakeFiles/rebuild_cache.dir
