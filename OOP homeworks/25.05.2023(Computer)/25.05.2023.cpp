@@ -1,0 +1,260 @@
+#include <iostream>
+#include "Computer.cpp"
+#include "RAM.cpp"
+#include "Motherboard.cpp"
+#include "Powersupply.cpp"
+#include "CPU.cpp"
+#include "CoolingSystem.cpp"
+#include "HardDrive.cpp"
+#include "VideoCard.cpp"
+using namespace std;
+
+struct RAM;
+struct Motherboard;
+struct Powersupply;
+struct CPU;
+struct CoolingSystem;
+struct HardDrive;
+struct VideoCard;
+
+class Computer;
+
+
+
+void RAM_FUNCTION(string &make, string &model, string &type, int &size, int &clockSpeed, RAM* &ram)
+{
+    cout << "Enter RAM make: "; cin >> make;
+    cout << "Enter RAM model: "; cin >> model;
+    cout << "Enter RAM type: "; cin >> type;
+    cout << "Enter RAM size in GB: ";cin >> size;
+    cout << "Enter RAM clock speed in MHz: "; cin >> clockSpeed;
+
+    ram->ramMake = make;
+    ram->ramModel = model;
+    ram->ramType = type;
+    ram->ramSize = size;
+    ram->ramClockSpeed = clockSpeed;
+}
+void MOTHERBOARD_FUNCTION(string &make, string &model, string &formFactor,int &socketType,
+                          string &chipsetMaker,int &cpuCompatibility, string &ramType, int &ramSize, Motherboard* &motherboard)
+{
+    cout << "Enter motherboard maker: "; cin >> make;
+    cout << "Enter motherboard model: "; cin >> model;
+    cout << "Enter motherboard form-factor: "; cin >> formFactor;
+    cout << "Enter motherboard socket-type: "; cin >> socketType;
+    cout << "Enter motherboard chipset maker: "; cin >> chipsetMaker;
+    cout << "Enter motherboard cpu compatibility: "; cin >> cpuCompatibility;
+    cout << "Enter motherboard ram type: "; cin >> ramType;
+    cout << "Enter motherboard ram size: "; cin >> ramSize;
+
+    motherboard->makeMotherboard = make;
+    motherboard->modelMotherboard = model;
+    motherboard->formFactorMotherboard = formFactor;
+    motherboard->socketTypeMotherboard = socketType;
+    motherboard->chipsetMakerMotherboard = chipsetMaker;
+    motherboard->cpuCompatibilityMotherboard = cpuCompatibility;
+    motherboard->ramTypeMotherboard = ramType;
+    motherboard->ramSizeMotherboard = ramSize;
+}
+void POWERSUPPLY_FUNCTION(string &make, string &model, uint16_t &power, uint16_t &fanDiameter, Powersupply* &powersupply)
+{
+    cout << "Enter power supply maker: "; cin >> make;
+    cout << "Enter power supply model: "; cin >> model;
+    cout << "Enter power supply power: "; cin >> power;
+    cout << "Enter power supply fan diameter: "; cin >> fanDiameter;
+
+    powersupply->powerSupplyMake = make;
+    powersupply->powerSupplyModel = model;
+    powersupply->powerSupplyPower = power;
+    powersupply->powerSupplyFanDiameter = fanDiameter;
+}
+void CPU_FUNCTION(string &make, string &model, double &clockSpeed, CPU* &cpu)
+{
+
+    cout << "Enter CPU make: "; cin >> make;
+    cout << "Enter CPU model: "; cin >> model;
+    cout << "Enter CPU clock speed: "; cin >> clockSpeed;
+
+    cpu->cpuMake = make;
+    cpu->cpuModel = model;
+    cpu->cpuClockSpeed = clockSpeed;
+
+}
+void COOLINGSYSTEM_FUNCTION(string &make, string &model, CoolingSystem* &coolingSystem)
+{
+    cout << "Enter cooling system maker: "; cin >> make;
+    cout << "Enter cooling system model: "; cin >> model;
+
+    coolingSystem->nameCoolingSystem = make;
+    coolingSystem->modelCoolingSystem = model;
+}
+void HARDDRIVE_FUNCTION(string &make, string &model, string& formFactor, uint16_t &capacity, HardDrive* &hardDrive)
+{
+    cout << "Enter hard drive maker: "; cin >> make;
+    cout << "Enter hard drive model: "; cin >> model;
+    cout << "Enter hard drive form-factor: "; cin >> formFactor;
+    cout << "Enter hard drive capacity: "; cin >> capacity;
+
+
+    hardDrive->makeHardDrive = make;
+    hardDrive->modelHardDrive = model;
+    hardDrive->formFactorHardDrive = formFactor;
+    hardDrive->capacityHardDrive = capacity;
+}
+void VIDEOCARD_FUNCTION(string &make, string &model, string &graphicFamily, uint16_t &internalVideoMemory, string &memoryType, uint16_t &memoryBits, uint16_t &ventilatorsCount, VideoCard* &videoCard)
+{
+    cout << "Enter video card maker: "; cin >> make;
+    cout << "Enter video card model "; cin >> model;
+    cout << "Enter video card graphic family: "; cin >> graphicFamily;
+    cout << "Enter internal video memory: "; cin >> internalVideoMemory;
+    cout << "Enter memory type: "; cin >> memoryType;
+    cout << "Enter video card memory bits: "; cin >> memoryBits;
+    cout << "Enter number of ventilators: "; cin >> ventilatorsCount;
+
+    videoCard->makeVideoCard = make;
+    videoCard->modelVideoCard = model;
+    videoCard->graphicFamily = graphicFamily;
+    videoCard->internalVideoMemory = internalVideoMemory;
+    videoCard->memoryType = memoryType;
+    videoCard->memoryBits = memoryBits;
+    videoCard->ventilatorsCount = ventilatorsCount;
+
+}
+void CORPUS_FUNCTION(string &corpus, Computer* &computer)
+{
+    cout << "Enter corpus: "; cin >> corpus;
+    computer->corpus = corpus;
+}
+void ALL_INFO(RAM* &ram, Motherboard* &motherboard, CPU* &cpu, HardDrive* &hardDrive, VideoCard* &videoCard, Powersupply* &powersupply, CoolingSystem* &coolingSystem, Computer* &computer)
+{
+    ram->ramInfo();
+    cout << endl;
+    motherboard->motherboadInfo();
+    cout << endl;
+    cpu->cpuInfo();
+    cout << endl;
+    hardDrive->hardDriveInfo();
+    cout << endl;
+    videoCard->videoCardInfo();
+    cout << endl;
+    powersupply->powerSupplyInfo();
+    cout << endl;
+    coolingSystem->coolingSystemInfo();
+    cout << endl;
+    computer->corpusInfo();
+    cout << endl;
+}
+
+
+
+int main()
+{
+    //RAM
+    string ramMake, ramModel, ramType;
+    int ramSize = 0, ramClockSpeed = 0;
+    RAM* ram = new RAM(ramMake,ramModel, ramType, ramSize, ramClockSpeed);
+    RAM_FUNCTION(ramMake,ramModel,ramType,ramSize,ramClockSpeed, ram);
+
+
+    //Motherboard
+    int motherboardSocketType = 0, motherboardRamSize = 0, motherboardCpuCompatibility = 0;
+    string motherboardMake, motherboardModel, motherboardFormFactor, motherboardChipsetMaker, motherboardRamType;
+    Motherboard* motherboard = new Motherboard(motherboardMake, motherboardModel, motherboardFormFactor, motherboardSocketType, motherboardChipsetMaker, motherboardCpuCompatibility, motherboardRamType, motherboardRamSize);
+    MOTHERBOARD_FUNCTION(motherboardMake,motherboardModel, motherboardFormFactor, motherboardSocketType, motherboardChipsetMaker, motherboardCpuCompatibility, motherboardRamType, motherboardRamSize, motherboard);
+
+    //Power supply
+    string powerSupplyMake, powerSupplyModel;
+    uint16_t powerSupplyPower = 0, powerSupplyFanDiameter = 0;
+    Powersupply *powersupply = new Powersupply(powerSupplyMake, powerSupplyModel, powerSupplyPower, powerSupplyFanDiameter);
+    POWERSUPPLY_FUNCTION(powerSupplyMake,powerSupplyModel,powerSupplyPower,powerSupplyFanDiameter,powersupply);
+
+    //CPU
+    string cpuMake, cpuModel; double cpuClockSpeed = 0;
+    CPU *cpu = new CPU(cpuMake, cpuModel, cpuClockSpeed);
+    CPU_FUNCTION(cpuMake, cpuModel, cpuClockSpeed, cpu);
+
+    //Cooling system
+    string coolingSystemMake, coolingSystemModel;
+    CoolingSystem* coolingSystem = new CoolingSystem(coolingSystemMake,coolingSystemModel);
+    COOLINGSYSTEM_FUNCTION(coolingSystemMake, coolingSystemModel, coolingSystem);
+
+    //Hard drive
+    string makeHardDrive, modelHardDrive, formFactorHardDrive; uint16_t capacityHardDrive = 0;
+    HardDrive* hardDrive = new HardDrive(makeHardDrive, modelHardDrive, formFactorHardDrive, capacityHardDrive);
+    HARDDRIVE_FUNCTION(makeHardDrive,modelHardDrive,formFactorHardDrive,capacityHardDrive, hardDrive);
+
+    //Video card
+    string makeVideoCard, modelVideoCard, graphicFamilyVideoCard,memoryTypeVideoCard;
+    uint16_t memoryBitsVideoCard = 0, ventilatorsCount = 0, internalVideoMemoryVideoCard = 0;
+    VideoCard* videoCard = new VideoCard(makeVideoCard,modelVideoCard,graphicFamilyVideoCard,internalVideoMemoryVideoCard,memoryTypeVideoCard,memoryBitsVideoCard,ventilatorsCount);
+    VIDEOCARD_FUNCTION(makeVideoCard,modelVideoCard, graphicFamilyVideoCard,internalVideoMemoryVideoCard,memoryTypeVideoCard,memoryBitsVideoCard,ventilatorsCount,videoCard);
+
+
+    //Corpus
+    string corpus;
+    Computer* computer = new Computer(corpus);
+    CORPUS_FUNCTION(corpus, computer);
+
+
+
+
+    //Use system
+    int choice = 0;
+    do {
+        cout << "1.Show all info about computer" << endl
+             << "2.Show RAM info" << endl
+             << "3.Show CPU info" << endl
+             << "4.Show motherboard info" << endl
+             << "5.Show video card info" << endl
+             << "6.Show hard drive info" << endl
+             << "7.Show power supply info" << endl
+             << "8.Show cooling system info" << endl
+             << "9.Close program" << endl;
+        cout << "Choose one: "; cin >> choice;
+
+        switch (choice) {
+            case 1:
+                ALL_INFO(ram,motherboard, cpu, hardDrive, videoCard, powersupply, coolingSystem,computer);
+            case 2:
+                ram->ramInfo();
+                break;
+            case 3:
+                cpu->cpuInfo();
+                break;
+            case 4:
+                motherboard->motherboadInfo();
+                break;
+            case 5:
+                videoCard->videoCardInfo();
+                break;
+            case 6:
+                hardDrive->hardDriveInfo();
+                break;
+            case 7:
+                powersupply->powerSupplyInfo();
+                break;
+            case 8:
+                coolingSystem->coolingSystemInfo();
+                break;
+        }
+    }while(choice != 9);
+
+    delete ram;
+    delete cpu;
+    delete videoCard;
+    delete hardDrive;
+    delete coolingSystem;
+    delete motherboard;
+    delete powersupply;
+    delete computer;
+
+
+    return 0;
+}
+
+
+
+
+
+
+

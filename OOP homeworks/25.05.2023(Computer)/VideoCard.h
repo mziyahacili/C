@@ -1,0 +1,6 @@
+
+#ifndef COMPUTERHW_OOP__VIDEOCARD_H
+#define COMPUTERHW_OOP__VIDEOCARD_H
+
+#endif //COMPUTERHW_OOP__VIDEOCARD_H
+struct VideoCard;

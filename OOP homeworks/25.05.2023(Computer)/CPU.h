@@ -1,0 +1,6 @@
+
+#ifndef COMPUTERHW_OOP__CPU_H
+#define COMPUTERHW_OOP__CPU_H
+
+#endif //COMPUTERHW_OOP__CPU_H
+struct CPU;

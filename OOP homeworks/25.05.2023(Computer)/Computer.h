@@ -1,0 +1,6 @@
+
+#ifndef COMPUTERHW_OOP__COMPUTER_H
+#define COMPUTERHW_OOP__COMPUTER_H
+#endif //COMPUTERHW_OOP__COMPUTER_H
+
+class Computer;
