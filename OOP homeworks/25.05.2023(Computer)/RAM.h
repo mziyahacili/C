@@ -1,7 +1,0 @@
-
-
-#ifndef COMPUTERHW_OOP__RAM_H
-#define COMPUTERHW_OOP__RAM_H
-
-#endif //COMPUTERHW_OOP__RAM_H
-struct RAM;

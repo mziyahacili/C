@@ -1,7 +1,0 @@
-
-#ifndef COMPUTERHW_OOP__POWERSUPPLY_H
-#define COMPUTERHW_OOP__POWERSUPPLY_H
-
-#endif //COMPUTERHW_OOP__POWERSUPPLY_H
-
-struct Powersupply;

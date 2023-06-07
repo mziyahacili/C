@@ -1,6 +1,0 @@
-
-#ifndef COMPUTERHW_OOP__HARDDRIVE_H
-#define COMPUTERHW_OOP__HARDDRIVE_H
-
-#endif //COMPUTERHW_OOP__HARDDRIVE_H
-struct HardDrive;

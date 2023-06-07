@@ -1,7 +1,0 @@
-
-
-#ifndef COMPUTERHW_OOP__MOTHERBOARD_H
-#define COMPUTERHW_OOP__MOTHERBOARD_H
-
-#endif //COMPUTERHW_OOP__MOTHERBOARD_H
-struct Motherboard;
