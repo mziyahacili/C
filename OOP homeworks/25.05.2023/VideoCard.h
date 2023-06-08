@@ -4,8 +4,8 @@
 using namespace std;
 struct VideoCard
 {
-    string makeVideoCard;
-    string modelVideoCard;
+    string make;
+    string model;
     string graphicFamily;
     uint16_t internalVideoMemory;
     string memoryType;
@@ -13,7 +13,7 @@ struct VideoCard
     uint16_t memoryBits;
 
     VideoCard() = default;
-    VideoCard(string makeVideoCard, string modelVideoCard, string graphicFamily, uint16_t internalVideoMemory,
+    VideoCard(string make, string model, string graphicFamily, uint16_t internalVideoMemory,
               string memoryType, uint16_t memoryBits,  uint16_t ventilatorsCount);
 
     void videoCardInfo() const;

@@ -9,15 +9,6 @@
 #include "VideoCard.cpp"
 using namespace std;
 
-//struct RAM;
-//struct Motherboard;
-//struct Powersupply;
-//struct CPU;
-//struct CoolingSystem;
-//struct HardDrive;
-//struct VideoCard;
-//class Computer;
-
 
 
 void RAM_FUNCTION(string &make, string &model, string &type, int &size, int &clockSpeed, RAM* &ram)
@@ -28,11 +19,11 @@ void RAM_FUNCTION(string &make, string &model, string &type, int &size, int &clo
     cout << "Enter RAM size in GB: ";cin >> size;
     cout << "Enter RAM clock speed in MHz: "; cin >> clockSpeed;
 
-    ram->ramMake = make;
-    ram->ramModel = model;
-    ram->ramType = type;
-    ram->ramSize = size;
-    ram->ramClockSpeed = clockSpeed;
+    ram->make = make;
+    ram->model = model;
+    ram->type = type;
+    ram->size = size;
+    ram->clockSpeed = clockSpeed;
 }
 void MOTHERBOARD_FUNCTION(string &make, string &model, string &formFactor,int &socketType,
                           string &chipsetMaker,int &cpuCompatibility, string &ramType, int &ramSize, Motherboard* &motherboard)
@@ -46,14 +37,14 @@ void MOTHERBOARD_FUNCTION(string &make, string &model, string &formFactor,int &s
     cout << "Enter motherboard ram type: "; cin >> ramType;
     cout << "Enter motherboard ram size: "; cin >> ramSize;
 
-    motherboard->makeMotherboard = make;
-    motherboard->modelMotherboard = model;
-    motherboard->formFactorMotherboard = formFactor;
-    motherboard->socketTypeMotherboard = socketType;
-    motherboard->chipsetMakerMotherboard = chipsetMaker;
-    motherboard->cpuCompatibilityMotherboard = cpuCompatibility;
-    motherboard->ramTypeMotherboard = ramType;
-    motherboard->ramSizeMotherboard = ramSize;
+    motherboard->make = make;
+    motherboard->model = model;
+    motherboard->formFactor = formFactor;
+    motherboard->socketType = socketType;
+    motherboard->chipsetMaker = chipsetMaker;
+    motherboard->cpuCompatibility = cpuCompatibility;
+    motherboard->ramType = ramType;
+    motherboard->ramSize = ramSize;
 }
 void POWERSUPPLY_FUNCTION(string &make, string &model, uint16_t &power, uint16_t &fanDiameter, Powersupply* &powersupply)
 {
@@ -62,10 +53,10 @@ void POWERSUPPLY_FUNCTION(string &make, string &model, uint16_t &power, uint16_t
     cout << "Enter power supply power: "; cin >> power;
     cout << "Enter power supply fan diameter: "; cin >> fanDiameter;
 
-    powersupply->powerSupplyMake = make;
-    powersupply->powerSupplyModel = model;
-    powersupply->powerSupplyPower = power;
-    powersupply->powerSupplyFanDiameter = fanDiameter;
+    powersupply->make = make;
+    powersupply->model = model;
+    powersupply->power = power;
+    powersupply->fanDiameter = fanDiameter;
 }
 void CPU_FUNCTION(string &make, string &model, double &clockSpeed, CPU* &cpu)
 {
@@ -74,9 +65,9 @@ void CPU_FUNCTION(string &make, string &model, double &clockSpeed, CPU* &cpu)
     cout << "Enter CPU model: "; cin >> model;
     cout << "Enter CPU clock speed: "; cin >> clockSpeed;
 
-    cpu->cpuMake = make;
-    cpu->cpuModel = model;
-    cpu->cpuClockSpeed = clockSpeed;
+    cpu->make = make;
+    cpu->model = model;
+    cpu->clockSpeed = clockSpeed;
 
 }
 void COOLINGSYSTEM_FUNCTION(string &make, string &model, CoolingSystem* &coolingSystem)
@@ -84,8 +75,8 @@ void COOLINGSYSTEM_FUNCTION(string &make, string &model, CoolingSystem* &cooling
     cout << "Enter cooling system maker: "; cin >> make;
     cout << "Enter cooling system model: "; cin >> model;
 
-    coolingSystem->nameCoolingSystem = make;
-    coolingSystem->modelCoolingSystem = model;
+    coolingSystem->make = make;
+    coolingSystem->model = model;
 }
 void HARDDRIVE_FUNCTION(string &make, string &model, string& formFactor, uint16_t &capacity, HardDrive* &hardDrive)
 {
@@ -95,10 +86,10 @@ void HARDDRIVE_FUNCTION(string &make, string &model, string& formFactor, uint16_
     cout << "Enter hard drive capacity: "; cin >> capacity;
 
 
-    hardDrive->makeHardDrive = make;
-    hardDrive->modelHardDrive = model;
-    hardDrive->formFactorHardDrive = formFactor;
-    hardDrive->capacityHardDrive = capacity;
+    hardDrive->make = make;
+    hardDrive->model = model;
+    hardDrive->formFactor = formFactor;
+    hardDrive->capacity = capacity;
 }
 void VIDEOCARD_FUNCTION(string &make, string &model, string &graphicFamily, uint16_t &internalVideoMemory, string &memoryType, uint16_t &memoryBits, uint16_t &ventilatorsCount, VideoCard* &videoCard)
 {
@@ -110,8 +101,8 @@ void VIDEOCARD_FUNCTION(string &make, string &model, string &graphicFamily, uint
     cout << "Enter video card memory bits: "; cin >> memoryBits;
     cout << "Enter number of ventilators: "; cin >> ventilatorsCount;
 
-    videoCard->makeVideoCard = make;
-    videoCard->modelVideoCard = model;
+    videoCard->make = make;
+    videoCard->model = model;
     videoCard->graphicFamily = graphicFamily;
     videoCard->internalVideoMemory = internalVideoMemory;
     videoCard->memoryType = memoryType;
@@ -119,30 +110,7 @@ void VIDEOCARD_FUNCTION(string &make, string &model, string &graphicFamily, uint
     videoCard->ventilatorsCount = ventilatorsCount;
 
 }
-void CORPUS_FUNCTION(string &corpus, Computer* &computer)
-{
-    cout << "Enter corpus: "; cin >> corpus;
-    computer->corpus = corpus;
-}
-void ALL_INFO(RAM* &ram, Motherboard* &motherboard, CPU* &cpu, HardDrive* &hardDrive, VideoCard* &videoCard, Powersupply* &powersupply, CoolingSystem* &coolingSystem, Computer* &computer)
-{
-    ram->ramInfo();
-    cout << endl;
-    motherboard->motherboadInfo();
-    cout << endl;
-    cpu->cpuInfo();
-    cout << endl;
-    hardDrive->hardDriveInfo();
-    cout << endl;
-    videoCard->videoCardInfo();
-    cout << endl;
-    powersupply->powerSupplyInfo();
-    cout << endl;
-    coolingSystem->coolingSystemInfo();
-    cout << endl;
-    computer->corpusInfo();
-    cout << endl;
-}
+
 
 
 
@@ -153,7 +121,6 @@ int main()
     int ramSize = 0, ramClockSpeed = 0;
     RAM* ram = new RAM(ramMake,ramModel, ramType, ramSize, ramClockSpeed);
     RAM_FUNCTION(ramMake,ramModel,ramType,ramSize,ramClockSpeed, ram);
-
 
     //Motherboard
     int motherboardSocketType = 0, motherboardRamSize = 0, motherboardCpuCompatibility = 0;
@@ -167,10 +134,12 @@ int main()
     Powersupply *powersupply = new Powersupply(powerSupplyMake, powerSupplyModel, powerSupplyPower, powerSupplyFanDiameter);
     POWERSUPPLY_FUNCTION(powerSupplyMake,powerSupplyModel,powerSupplyPower,powerSupplyFanDiameter,powersupply);
 
+
     //CPU
     string cpuMake, cpuModel; double cpuClockSpeed = 0;
     CPU *cpu = new CPU(cpuMake, cpuModel, cpuClockSpeed);
     CPU_FUNCTION(cpuMake, cpuModel, cpuClockSpeed, cpu);
+
 
     //Cooling system
     string coolingSystemMake, coolingSystemModel;
@@ -188,13 +157,8 @@ int main()
     VideoCard* videoCard = new VideoCard(makeVideoCard,modelVideoCard,graphicFamilyVideoCard,internalVideoMemoryVideoCard,memoryTypeVideoCard,memoryBitsVideoCard,ventilatorsCount);
     VIDEOCARD_FUNCTION(makeVideoCard,modelVideoCard, graphicFamilyVideoCard,internalVideoMemoryVideoCard,memoryTypeVideoCard,memoryBitsVideoCard,ventilatorsCount,videoCard);
 
-
-    //Corpus
-    string corpus;
-    Computer* computer = new Computer(corpus);
-    CORPUS_FUNCTION(corpus, computer);
-
-
+    //Computer
+    Computer* computer = new Computer(*ram,*motherboard,*cpu,*hardDrive,*videoCard,*powersupply,*coolingSystem);
 
 
     //Use system
@@ -213,7 +177,7 @@ int main()
 
         switch (choice) {
             case 1:
-                ALL_INFO(ram,motherboard, cpu, hardDrive, videoCard, powersupply, coolingSystem,computer);
+                computer->computerInfo();
             case 2:
                 ram->ramInfo();
                 break;

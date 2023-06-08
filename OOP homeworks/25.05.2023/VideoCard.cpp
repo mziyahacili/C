@@ -1,10 +1,10 @@
 #include "VideoCard.h"
 
-VideoCard :: VideoCard(string makeVideoCard, string modelVideoCard, string graphicFamily, uint16_t internalVideoMemory,
+VideoCard :: VideoCard(string make, string model, string graphicFamily, uint16_t internalVideoMemory,
         string memoryType, uint16_t memoryBits,  uint16_t ventilatorsCount)
     {
-        this->makeVideoCard = makeVideoCard;
-        this->modelVideoCard = modelVideoCard;
+        this->make = make;
+        this->model = model;
         this->graphicFamily = graphicFamily;
         this->internalVideoMemory = internalVideoMemory;
         this->memoryType = memoryType;
@@ -14,8 +14,8 @@ VideoCard :: VideoCard(string makeVideoCard, string modelVideoCard, string graph
 
 void VideoCard :: videoCardInfo() const{
     cout << "Video card" << endl;
-    cout << "Video card make: " << makeVideoCard << endl
-         << "Video card model: " << modelVideoCard << endl
+    cout << "Video card make: " << make << endl
+         << "Video card model: " << model << endl
          << "Video card graphic family: " << graphicFamily << endl
          << "Internal video memory: " << internalVideoMemory << endl
          << "Memory type: " << memoryType << endl
