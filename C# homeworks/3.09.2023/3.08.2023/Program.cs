@@ -175,6 +175,161 @@ class CheckNameException : Exception
 
 #endregion
 
+#region Part3(2 version) 
+
+
+using System.Collections;
+using System.ComponentModel.Design;
+using System.Text;
+using System.Threading.Channels;
+
+try
+{
+
+    Book book = new Book("Война и мир", "Лев Толстой");
+    Book book2 = new Book("Будущая книга по C#", "Эльвин Азимов special");
+    Book book3 = new Book("Думай и Богатей", "Наполеон Хилл");
+
+    Book indexBook = new("Index", "Index");
+
+    IEnumerable<Book> b = new[] { book };
+
+    BookList books = new BookList(b);
+    books.Add(book2);
+    books.Add(book3);
+    books[3] = indexBook;
+
+
+    Console.WriteLine(books);
+
+
+}
+catch (CheckNameException e)
+{
+    Console.WriteLine(e);
+}
+
+class Book
+{
+
+    private string _name;
+    private string _author;
+    
+    
+    public string Name { get => _name;
+        set
+        {
+            if (string.IsNullOrWhiteSpace(value))
+                throw new CheckNameException("Empty!");
+            _name = value;
+        }
+    }
+
+    public string Author
+    {
+        get => _author;
+        set
+        {
+            if (string.IsNullOrWhiteSpace(value))
+                throw new CheckNameException("Error empty!");
+            _author = value;
+        }
+    }
+    
+    
+    public Book(string name, string author)
+    {
+        Name = name;
+        Author = author;
+    }
+
+    public override string ToString()
+    {
+        return $"Name: {Name}\n Author: {Author}\n";
+    }
+}
+
+
+class BookList
+{
+    private List<Book> Books = new List<Book>();
+
+    public BookList(IEnumerable<Book> book)
+    {
+        Books = new List<Book>(book);
+    }
+
+    public void Add(Book book)
+    {
+        Books.Add(book);
+    }
+
+    public int Count()
+    {
+       return Books.Count();
+    }
+    
+    public override string ToString()
+    {
+        StringBuilder sb = new();
+        sb.AppendLine("Books: ");
+        foreach (var book in Books)
+        {
+            sb.AppendLine(book.ToString());
+        }
+
+        return sb.ToString();
+    }
+
+    public Book this[int index]
+    {
+        get => Books[index];
+        set => Books[index] = value;
+    }
+    
+    public static BookList operator +(BookList b, Book book)
+    {
+        string name = book.Name;
+        string author = book.Author;
+            
+        b.Books.Add(book);
+        return b;
+    }
+
+    public static BookList operator -(BookList b, Book book)
+    {
+        string name = book.Name;
+        string author = book.Author;
+            
+        b.Books.Add(book);
+        return b;
+    }
+    
+    
+
+}
+
+
+class CheckNameException : Exception
+{
+
+    public string Message { get; private set; }
+
+    public CheckNameException(string message) : base(message)
+    {
+        Message = message;
+    }
+
+    public override string ToString()
+    {
+        return $"Error message: {Message}";
+    }
+}
+
+
+
+#endregion
+
 #region Part1
 
 /*
