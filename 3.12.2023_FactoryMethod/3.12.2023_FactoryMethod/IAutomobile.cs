@@ -3,8 +3,8 @@
 public interface IAutomobile
 {
     public string Make { get; set; }
-    public string Model{ get;}
+    
     public string Color { get; set; }
     
-    public string GetModel();
+    string GetModel();
 }
