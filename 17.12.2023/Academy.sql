@@ -135,4 +135,3 @@ insert into GroupData(StudentId, GroupId) values(13, 2);
 insert into GroupData(StudentId, GroupId) values(14, 2);
 insert into GroupData(StudentId, GroupId) values(15, 2);
 
-
