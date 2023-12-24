@@ -132,8 +132,8 @@ inner join Groups G on GroupsLectures.GroupId = G.Id
 inner join Departments D on G.DepartmentId = D.Id
 inner join Faculties F on F.Id = D.FacultyId;
 
-select D.Name, G.Name from GroupsLectures
-inner join Groups G on GroupsLectures.GroupId = G.Id
+
+select G.Name, D.Name from Groups G
 inner join Departments D on G.Id = D.Id;
 
 select S.Name from Lectures
@@ -148,10 +148,11 @@ inner join Lectures L on GroupsLectures.LectureId = L.Id
 inner join Subjects S on L.SubjectId = S.Id
 where S.Name = 'Database Theory';
 
-select Groups.Name from Groups
-inner join Departments D on Groups.DepartmentId = D.Id
-where D.Name = 'Computer Science';
 
+select G.Name from Groups G
+inner join Departments D on G.DepartmentId = D.Id
+inner join Faculties F on D.FacultyId = F.Id
+where F.Name = 'Computer Science';
 
 
 select G.Name, F.Name from Groups G
@@ -159,7 +160,10 @@ inner join Departments D on G.DepartmentId = D.Id
 inner join Faculties F on D.FacultyId = F.Id
 where G.Year = 5;
 
-select T.Name, T.Surname, S.Name from Lectures
-inner join Teachers T on T.Id = Lectures.TeacherId
-inner join Subjects S on Lectures.SubjectId = S.Id
-where LectureRoom = 'B103';
+
+select T.Name, T.Surname, S.Name, G.Name from GroupsLectures
+inner join Groups G on G.Id = GroupsLectures.GroupId
+inner join Lectures L on GroupsLectures.LectureId = L.Id
+inner join Teachers T on L.TeacherId = T.Id
+inner join Subjects S on L.SubjectId = S.Id
+where L.LectureRoom = 'B103';
