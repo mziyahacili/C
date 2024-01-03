@@ -1,0 +1,166 @@
+﻿<Window x:Class="CalculatorApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:md ="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:CalculatorApp"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Title="MainWindow" Height="665" Width="500">
+
+    <Window.Resources>
+        <Style TargetType="Button" BasedOn="{StaticResource MaterialDesignFlatDarkButton}">
+            <Setter Property="Height" Value="70"/>
+            <Setter Property="Background" Value="#3b3a3a"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderBrush" Value="#212121"/>
+            <Setter Property="BorderThickness" Value="1"/>
+        </Style>
+    </Window.Resources>
+
+    <Border
+        CornerRadius="10"
+        BorderBrush="#212121"
+        BorderThickness="5"
+        Background="#212121">
+
+        <Grid Background="#212121">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.1*"/>
+                <RowDefinition Height="0.9*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+
+            <Grid Grid.Row="0" MouseDown="Grid_MouseDown">
+
+                <Border>
+                    <Border.Background>
+                        <SolidColorBrush Color="#212121"/>
+                    </Border.Background>
+                </Border>
+
+                <StackPanel Grid.Row="0"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    Orientation="Horizontal">
+                    <Button 
+                    Foreground="White"
+                    VerticalAlignment="Center"
+                    Click="Minimize_Click"
+                    Name="Minimize"
+                    Style="{DynamicResource MaterialDesignFlatButton}">
+                        <md:PackIcon Kind="Minimize"/>
+                    </Button>
+
+                    <Button 
+                    Foreground="White"
+                    VerticalAlignment="Center"
+                    Click="Maximize_Click"
+                    Name="Maximize"
+                    Style="{DynamicResource MaterialDesignFlatButton}">
+                        <md:PackIcon Kind="Maximize"/>
+                    </Button>
+
+                    <Button 
+                    Foreground="White"
+                    VerticalAlignment="Center"
+                    Click="Close_Click"
+                    Name="Close"
+                    Style="{DynamicResource MaterialDesignFlatButton}">
+                        <md:PackIcon Kind="Close"/>
+                    </Button>
+                </StackPanel>
+
+            </Grid>
+
+
+
+            <Grid Grid.Row="1" Height="100">
+
+                <TextBlock Name="miniCalcTextBlock" 
+                       Foreground="Gray"
+                       Height="15"
+                       HorizontalAlignment="Right"
+                       VerticalAlignment="Top"/>
+
+                <TextBlock
+            x:Name="calcText" 
+            Height="70"
+            HorizontalAlignment="Right"
+            Foreground="White"
+            FontSize="30"/>
+
+            </Grid>
+
+            <Grid Grid.Row="1" Height="50" VerticalAlignment="Bottom">
+
+                <Button 
+                  Name="Cbutton"
+                  Click="Button_Click"
+                  Content="C" 
+                  HorizontalAlignment="Right" 
+                  VerticalAlignment="Center"
+                  Style="{StaticResource MaterialDesignFlatButton}"  
+                  Foreground="White"/>
+
+            </Grid>
+
+            <Grid Grid.Row="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.4*"/>
+                    <RowDefinition Height="0.4*"/>
+                    <RowDefinition Height="0.4*"/>
+                    <RowDefinition Height="0.4*"/>
+                    <RowDefinition Height="0.4*"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.9*"/>
+                    <ColumnDefinition Width="0.9*"/>
+                    <ColumnDefinition Width="0.9*"/>
+                    <ColumnDefinition Width="0.9*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button  Content="1" Grid.Row="3" Click="Button_Click"/>
+                <Button Content="2" Grid.Column="1" Grid.Row="3" Click="Button_Click"/>
+                <Button Content="3" Grid.Column="2"  Grid.Row="3" Click="Button_Click"/>
+                <Button Content="4" Grid.Row="2" Click="Button_Click"/>
+                <Button Content="5" Grid.Row="2" Grid.Column="1" Click="Button_Click"/>
+                <Button Content="6" Grid.Row="2" Grid.Column="2" Click="Button_Click"/>
+                <Button Content="7" Grid.Row="1" Click="Button_Click"/>
+                <Button Content="8" Grid.Row="1" Grid.Column="1" Click="Button_Click"/>
+                <Button Content="9" Grid.Column="2" Grid.Row="1" Click="Button_Click"/>
+
+                <Button Content="0" Grid.ColumnSpan="2" Grid.Row="4" Click="Button_Click"/>
+
+                <Button Content="," Grid.Column="2" Grid.Row="4" Click="Button_Click"/>
+
+                <Button Name="EqualButton" Content="=" Grid.Column="3" Grid.Row="4" Background="#fc895b" Click="Button_Click"/>
+
+                <Button Background="#2e2e2d" Name="PlusButton"  Content="+" Grid.Column="3" Grid.Row="3" Click="Button_Click"/>
+
+                <Button Background="#2e2e2d" Name ="MinusButton" Content="-" Grid.Column="3" Grid.Row="2" Click="Button_Click"/>
+
+                <Button Background="#2e2e2d" Name="MultButton"  Content="*" Grid.Column="3" Grid.Row="1" Click="Button_Click"/>
+
+                <Button Background="#2e2e2d" Name="DeleteButton" Content="DEL" Grid.Column="3" Grid.Row="0" Click="Button_Click"/>
+
+                <Button Background="#2e2e2d" Name="CEbutton"  Content="CE" Grid.Column="2" Grid.Row="0" Click="Button_Click"/>
+
+                <Button Background="#2e2e2d" Name="DivisionButton" Content="/" Grid.Column="1" Grid.Row="0" Click="Button_Click"/>
+
+                <Button Background="#2e2e2d" Name="PercentButton" Content="%" Grid.Column="0" Grid.Row="0" Click="Button_Click"/>
+
+            </Grid>
+
+
+        </Grid>
+
+    </Border>
+    
+
+</Window>
