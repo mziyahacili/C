@@ -33,16 +33,14 @@ body{
     background-color: #F8F8F8;
 }
 
-.header-title
-{
+.header-title{
     margin-bottom: 53px;
     font-size: 24px;
     line-height: 45px;
     font-weight: 300;
 }
 
-.header-subtitle
-{
+.header-subtitle{
     margin-bottom: 43px;
     font-size: 250px;
     line-height: 230px;
@@ -70,7 +68,7 @@ body{
     text-align: center;
 }
 
-.price  {
+.price{
     background-color: #ffffff;
     color: #272727;
     width: 143px;
@@ -81,8 +79,7 @@ body{
     text-align: center;
 }
 
-.header-img
-{
+.header-img{
     display: block;
     width: 408px;
     margin-top: -140px;
@@ -134,4 +131,37 @@ body{
     font-size: 32px;
     font-weight: 300;
     line-height: 50px;
+}
+
+.product-description-wrapper{
+    margin: 0 auto;
+    width: 417px;
+    margin-bottom: 85px;
+    margin-top: 100px;
+}
+
+.product-description-title{
+    text-align: center;
+    font-size: 32px;
+    line-height: 60px;
+    font-weight: 400;
+}
+
+.product-description{
+    text-align: center;
+    font-size: 24px;
+    line-height: 40px;
+    font-weight: 300;
+}
+
+.product-description-link{
+    color: #BB8B5D;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.product-description-line{
+    width: 178px;
+    color: #707070;
+    margin-bottom: 49px;
 }
