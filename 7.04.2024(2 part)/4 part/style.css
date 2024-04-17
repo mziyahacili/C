@@ -1,0 +1,107 @@
+*{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+ul{
+    list-style: none;
+}
+
+li{
+    margin: 5px;
+}
+
+a{
+    color: #BFCFE3;
+    text-decoration: none;
+}
+
+i{
+    color: #2F4F6D;
+    transition: background-color 0.3s ease; /* Добавляем плавный переход для изменения цвета фона */
+    font-size: 20px;
+}
+
+
+.header{
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+
+.main-content {
+    flex: 1;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+.footer{
+    background-color: #2F4F6D;
+    color: #BFCFE3;
+    height: 15vh;
+    padding: 10px;
+
+}
+
+.container{
+    
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+
+
+.third{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+.third-list{
+    display: flex;
+    justify-content: space-around; /* Равномерное распределение элементов по горизонтали */
+    align-items: center; /* Выравнивание элементов по вертикали */
+    text-align: center;
+}
+
+.icon-li {
+    background-color: #fff;
+    border-radius: 10px;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease; /* Добавляем плавный переход для изменения цвета фона */
+}
+
+.about-company-text
+{
+    text-align: center;
+}
+
+
+hr{
+    margin-left: 90px;
+    margin-right: 90px;
+}
+
+
+.icon-li:hover {
+    background-color: #2F4F6D; /* Новый цвет фона при наведении */
+    color: #fff;
+}
+
+.icon-li:hover i {
+    color: #fff; /* Новый цвет иконки при наведении */
+}
+
+
+
+

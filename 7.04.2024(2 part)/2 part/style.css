@@ -71,7 +71,7 @@ body{
   line-height: 60px;
 }
 .sidebar .nav-list{
-  margin-top: 20px;
+  margin-top: 150px;
   height: 100%;
 }
 .sidebar li{
@@ -116,11 +116,13 @@ body{
   border: none;
   border-radius: 12px;
   transition: all 0.5s ease;
-  background: #1d1b31;
+  background: #262A30;
+
 }
 .sidebar.open input{
   padding: 0 20px 0 50px;
   width: 100%;
+  border: 3px solid transparent; /* Устанавливаем начальное значение границы (тут прозрачно) */
 }
 .sidebar .bx-search{
   position: absolute;
@@ -128,30 +130,54 @@ body{
   left: 0;
   transform: translateY(-50%);
   font-size: 22px;
-  background: #1d1b31;
+  background: #262A30;
   color: #FFF;
+  border: 2px solid transparent;
 }
+
 .sidebar.open .bx-search:hover{
-  background: #1d1b31;
+  background: transparent;
   color: #FFF;
 }
-.sidebar .bx-search:hover{
-  background: #FFF;
-  color: #11101d;
+
+.sidebar.open input:focus {
+  border: 3px solid #AFF9FF;
+  transition: border 0.8s ease;
 }
+
+.sidebar.open .bx-search{
+  background: transparent;
+  color: #FFF;
+}
+
+
+.sidebar .bx-search:hover{
+  border: 2px solid #8dc5ca;
+  transition: border 0.8s ease;
+}
+
+.sidebar.open .bx-search:hover{
+  border: 2px solid transparent;
+  transition: border 0.8s ease;
+}
+
 .sidebar li a{
   display: flex;
   height: 100%;
-  width: 100%;
   border-radius: 12px;
   align-items: center;
   text-decoration: none;
   transition: all 0.4s ease;
   background: #262A30;
+  border: 2px solid transparent;
+  
 }
+
 .sidebar li a:hover{
-  background: #FFF;
+  border: 2px solid #8dc5ca;
+  transition: border 0.8s ease;
 }
+
 .sidebar li a .links_name{
   color: #fff;
   font-size: 15px;
@@ -168,7 +194,7 @@ body{
 .sidebar li a:hover .links_name,
 .sidebar li a:hover i{
   transition: all 0.5s ease;
-  color: #11101D;
+  color: #fff;
 }
 .sidebar li i{
   height: 50px;
@@ -176,6 +202,8 @@ body{
   font-size: 18px;
   border-radius: 12px;
 }
+
+
 .sidebar li.profile{
   position: fixed;
   height: 60px;
