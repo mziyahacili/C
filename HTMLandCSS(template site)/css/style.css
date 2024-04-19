@@ -1,23 +1,23 @@
-*{
+* {
     margin: 0;
     padding: 0;
     font-family: Inter;
 }
 
-body{
+body {
     background: #0D0105;
 }
 
-header{
+header {
     padding: 16px 16px 0px;
     height: 92px;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
-nav{
+nav {
     display: flex;
     justify-content: space-between;
     list-style-type: none;
@@ -27,21 +27,21 @@ nav{
     background: linear-gradient(137deg, rgba(17, 18, 20, .75) 4.87%, rgba(12, 13, 15, .9) 75.88%);
     border-radius: 16px;
     width: 100%;
-    max-width: 1094px;
+    max-width: 1204px;
     backdrop-filter: blur(5px);
-    border: 1px solid var(--Card-Border,hsla(0,0%,100%,.06));
-    box-shadow: inset 0 1px 1px 0 hsla(0,0%,100%,.15);
-    transition: height .3s ease,transform .3s ease;
-    transform: translateZ(0); 
+    border: 1px solid var(--Card-Border, hsla(0, 0%, 100%, .06));
+    box-shadow: inset 0 1px 1px 0 hsla(0, 0%, 100%, .15);
+    transition: height .3s ease, transform .3s ease;
+    transform: translateZ(0);
 }
 
-.menu{
+.menu {
     display: flex;
     list-style-type: none;
 }
 
-.menu .menu_link{
-    padding: 12px 14px;
+.menu .menu_link {
+    padding: 12px 16px;
     font-size: 14px;
     font-weight: 500;
     color: #9c9c9d;
@@ -50,18 +50,19 @@ nav{
 }
 
 
-.menu_logo_container{
-    display: flex;
+.menu_logo_container {
+    display: flex;    
+    margin-right: 30px;
 }
 
 
-.menu_login_container{
+.menu_login_container {
     display: flex;
     align-items: center;
-    justify-content: right;
+    justify-content: center;
 }
 
-.menu_login_container, .login_link{
+.login_link {
     padding: 12px 8px;
     font-size: 14px;
     font-weight: 500;
@@ -70,143 +71,56 @@ nav{
     transition: all .2s ease-in-out;
 }
 
-.menu_logo_container a .logo{
+.menu_logo_container a .logo {
     height: 24px;
     transition: transform .2s ease;
 }
 
-.download_button{
-    background: #fff;
-}
-
-.login_download, .apple_icon{
+.login_download,
+.apple_icon {
     color: #2f3031;
 }
 
-.login_download .apple_icon{
-    height: 20px;
+.login_download .apple_icon {
+    height: 15px;
+}
+
+.login_download {
+    margin-left: 20px;
+    display: inline-block;
+    padding: 8px 12px;
+    font-size: 14px;
+    font-weight: 500;
+    background: #e6e6e6;
+    min-height: 36px;
+    color: #2f3031;
+    cursor: pointer;
+    border-radius: 8px;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 0 2px rgba(0,0,0,.5), 0 0 14px 0 hsla(0,0%,100%,.19), inset 0 -1px 0.4px 0 rgba(0,0,0,.2), inset 0 1px 0.4px 0 #fff;
+    transition: background-image .2s, background-color .2s, box-shadow .2s ease-in-out, transform .1s ease-in-out;
 }
 
 
-.menu .menu_link:hover,.login_link:hover{
+
+.menu .menu_link:hover,
+.login_link:hover {
     color: #fff;
 }
 
-.menu_logo_container a .logo:hover{
+.menu_logo_container a .logo:hover {
     transform: scale(1.05);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-/* 
-*{
-    margin: 0;
-    padding: 0;
-    font-family: Inter;
+.login_download:hover {
+    background: #fff;
+    color: #0D0105;
 }
-
-body{
-    background: #0D0105;
-}
-
-header{
-    display: flex;
-    justify-content: space-between;
-    padding: 16px 16px 0px;
-    height: 92px;
-}
-
-a{
-    text-decoration: none;
-}
-
-nav{
-    display: flex;
-    justify-content: space-between;
-    list-style-type: none;
-    margin: 0 auto;
-    height: 76px;
-    padding: 25px 32px;
-    background: linear-gradient(137deg, rgba(17, 18, 20, .75) 4.87%, rgba(12, 13, 15, .9) 75.88%);
-    border-radius: 16px;
-    width: 100%;
-    max-width: 1094px;
-    backdrop-filter: blur(5px);
-    border: 1px solid var(--Card-Border,hsla(0,0%,100%,.06));
-    box-shadow: inset 0 1px 1px 0 hsla(0,0%,100%,.15);
-    transition: height .3s ease,transform .3s ease;
-    transform: translateZ(0); 
-}
-
-.menu{
-    width: 100%;
-    display: flex;
-    list-style-type: none;
-}
-
-.menu .menu_link{
-    padding: 12px 14px;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: normal;
-    color: #9c9c9d;
-    white-space: nowrap;
-    transition: all .2s ease-in-out;
-    gap: 10px;
-}
-
-
-
-.menu_logo_container{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-
-.menu_login_container{
-    display: flex;
-    align-items: center;
-    justify-content: right;
-    width: 100%;
-
-}
-
-.menu_login_container, .login_link{
-    padding: 12px 8px;
-    font-size: 14px;
-    font-weight: 500;
-    color: #9c9c9d;
-    white-space: nowrap;
-    transition: all .2s ease-in-out;
-}
+  
 
 
 
 
-.menu_logo_container a .logo{
-    height: 24px;
-    transition: transform .2s ease;
-}
 
-.menu .menu_link:hover,.login_link:hover{
-    color: #fff;
-}
-
-.menu_logo_container a .logo:hover{
-    transform: scale(1.05);
-}
-
-
- */
