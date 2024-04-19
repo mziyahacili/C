@@ -24,7 +24,7 @@ nav {
     margin: 0 auto;
     height: 76px;
     padding: 25px 32px;
-    background: linear-gradient(137deg, rgba(17, 18, 20, .75) 4.87%, rgba(12, 13, 15, .9) 75.88%);
+    background: linear-gradient(13deg, rgba(17, 18, 20, .75) 4.87%, rgba(12, 13, 15, .9) 75.88%);
     border-radius: 16px;
     width: 100%;
     max-width: 1204px;
@@ -120,6 +120,16 @@ nav {
 }
   
 
+
+.proheader{
+    min-height: 790px;
+    background: url(../images/backgrounds/hero-bg.webp) center center/cover no-repeat;
+    top: -72px;
+    display: flex;
+    padding: 72px 24px 0;
+    position: relative;
+    z-index: -1;
+}
 
 
 
