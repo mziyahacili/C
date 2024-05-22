@@ -1,0 +1,10 @@
+/* Здесь могут быть другие стили для страницы */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+#content {
+    margin-top: 20px;
+}
