@@ -1,0 +1,38 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    background-color: #eff0f3; /* Цвет фона */
+    background-image: radial-gradient(circle at 10% 10%, rgba(255, 255, 255, 0.6), transparent 50%), radial-gradient(circle at 90% 90%, rgba(255, 255, 255, 0.6), transparent 50%);
+}
+
+#footballField {
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom, #4CAF50 0%, #328e37 100%); /* Цвет поля */
+    position: relative;
+}
+
+#football {
+    width: 100px;
+    height: 100px;
+    background-image: radial-gradient(circle at 25% 25%, #FFD700, #b8860b 60%); /* Золотистый мяч с текстурой */
+    background-size: 50% 50%; /* Размер текстуры */
+    position: absolute;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Тень для мяча */
+    transition: transform 0.3s ease-out;
+    transform-origin: center center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+#football:before {
+    content: "⚽"; /* Иконка мяча */
+    font-size: 2em;
+}
