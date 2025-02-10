@@ -4,7 +4,6 @@ const path = require('path');
 
 const FILE_PATH = path.join(__dirname, 'books.json');
 
-// Читаем существующие книги или создаем пустой массив
 const loadBooks = () => {
   try {
     const data = fs.readFileSync(FILE_PATH, 'utf8');
